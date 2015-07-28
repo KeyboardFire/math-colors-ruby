@@ -7,6 +7,11 @@ funcs = {
         r: ->x, y{ (x+y).to_f / (w+h) * 255 },
         g: ->x, y{ x.to_f / w * 255 },
         b: ->x, y{ y.to_f / h * 255 }
+    },
+    'trig' => {
+        b: ->x, y{ (Math.sin((x+y).to_f / (w+h)) + 1) / 2 * 255 },
+        r: ->x, y{ (Math.sin(x.to_f / w) + 1) / 2 * 255 },
+        g: ->x, y{ (Math.sin(y.to_f / h) + 1) / 2 * 255 }
     }
 }
 
