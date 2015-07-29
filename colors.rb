@@ -27,6 +27,11 @@ funcs = {
         r: ->x, y{ (((x.to_f / w) * 10 % 1 - 0.5)**2 + ((y.to_f / h) * 10 % 1 - 0.5)**2).abs < 0.05 ? 255 : 0 },
         g: ->x, y{ (((x.to_f / w) * 10 % 1 - 0.5)**2 - ((y.to_f / h) * 10 % 1 - 0.5)**2).abs / 1 * 255 },
         b: ->x, y{ (((x.to_f / w) * 10 % 1 - 0.5)**2 + ((y.to_f / h) * 10 % 1 - 0.5)**2).abs / 0.5 * 255 }
+    },
+    'rand' => {
+        r: ->x, y{ Random.new(x+y).rand(255) },
+        g: ->x, y{ Random.new(x*y).rand(255) },
+        b: ->x, y{ Random.new(x-y).rand(255) }
     }
 }
 
