@@ -37,6 +37,11 @@ funcs = {
         r: ->x, y{ (x.to_f / w) % 0.1 < 0.01 ? 200 : 100 },
         g: ->x, y{ (y.to_f / w) % 0.2 < 0.19 ? 200 : 100 },
         b: ->x, y{ (x.to_f / w) % 0.3 < 0.15 ? 200 : 100 }
+    },
+    'waves' => {
+        r: ->x, y{ (Math.sin(x.to_f / w * 15) - (y.to_f / h - 0.5)).abs * 127 },
+        g: ->x, y{ (Math.cos(x.to_f / w * 15) - (y.to_f / h - 0.5)).abs * 127 },
+        b: ->x, y{ ((x.to_f / w) - (y.to_f / w)).abs < 0.25 ? 255 : 0 }
     }
 }
 
