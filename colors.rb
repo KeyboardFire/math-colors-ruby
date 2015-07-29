@@ -32,6 +32,11 @@ funcs = {
         r: ->x, y{ Random.new(x+y).rand(255) },
         g: ->x, y{ Random.new(x*y).rand(255) },
         b: ->x, y{ Random.new(x-y).rand(255) }
+    },
+    'grids' => {
+        r: ->x, y{ (x.to_f / w) % 0.1 < 0.01 ? 200 : 100 },
+        g: ->x, y{ (y.to_f / w) % 0.2 < 0.19 ? 200 : 100 },
+        b: ->x, y{ (x.to_f / w) % 0.3 < 0.15 ? 200 : 100 }
     }
 }
 
